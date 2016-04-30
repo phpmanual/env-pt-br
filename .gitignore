@@ -1,0 +1,5 @@
+.build/
+.pear/
+.phd/
+doc-pt_BR/
+web-php/
