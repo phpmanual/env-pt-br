@@ -32,6 +32,9 @@ help:
 	@echo "  x_check_sys_deps     verifies if you have all system dependencies."
 	@echo ""
 	@echo ""
+	@echo "  x_generate_revcheck  generate ${BUILD_DIR}/revcheck.html"
+	@echo ""
+	@echo ""
 	@echo "  x_pear_install       installs pear via download in your system. (php is needed)"
 	@echo ""
 	@echo ""
@@ -113,6 +116,11 @@ x_check_sys_deps:
 	@echo ""
 
 ###################################################################################################################
+
+x_generate_revcheck: .check_php
+	@cd ${SVN_DIR} && \
+		php -d error_reporting=0 doc-base/scripts/revcheck.php pt_BR > ${BUILD_DIR}/revcheck.html
+	@echo "Done. > file://${BUILD_DIR}/revcheck.html"
 
 x_pear_install: .check_php
 	@url=http://pear.php.net/go-pear.phar; \
