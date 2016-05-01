@@ -57,7 +57,7 @@ init: .get_svn_repo .get_git_repo
 .git_update: .check_git
 	git -C ${GIT_DIR} clean -df && git -C ${GIT_DIR} checkout -- . && git -C ${GIT_DIR} pull
 
-sync: svn_update git_update
+sync: .svn_update .git_update
 
 ###################################################################################################################
 

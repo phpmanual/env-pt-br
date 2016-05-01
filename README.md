@@ -13,12 +13,13 @@ So **phpmanual/env-pt-br** project provides this: a `Makefile` that gives you th
 ## Usage
 
 ```
-# cd into_your_desired_folder
-git clone https://github.com/phpmanual/env-pt-br.git
+export your_desired_folder=~/php-manual-pt-br # change accordingly
+git clone https://github.com/phpmanual/env-pt-br.git $your_desired_folder
+cd $your_desired_folder
 make
 ```
 
-And choose the action!
+... so choose the action!
 
 ### Examples
 
@@ -26,6 +27,11 @@ And choose the action!
 
 [![asciicast](https://asciinema.org/a/44199.png)](https://asciinema.org/a/44199)
 Asciinema: <https://asciinema.org/a/44199>
+
+#### make sync
+
+[![asciicast](https://asciinema.org/a/44221.png)](https://asciinema.org/a/44221)
+Asciinema: <https://asciinema.org/a/44221>
 
 #### make build
 
