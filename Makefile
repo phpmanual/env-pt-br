@@ -41,6 +41,12 @@ help:
 	@echo "  x_phd_install        installs phd via pear in your system. (pear and php are needed)"
 	@echo ""
 	@echo ""
+	@echo "  x_svn_status"         
+	@echo ""
+	@echo ""
+	@echo "  x_svn_commit"
+	@echo ""
+	@echo ""		
 
 ###################################################################################################################
 
@@ -140,6 +146,14 @@ x_phd_install: .check_pear .check_git
 		|| git clone http://git.php.net/repository/phd.git;
 	cd ${BASE_DIR}/phd \
 		&& sudo pear install package.xml package_generic.xml package_php.xml
+
+x_svn_status: .check_svn
+	@svn status ${SVN_DIR}/${LANG}
+
+x_svn_commit: .check_svn
+	@cd ${SVN_DIR}/${LANG} \
+		&& svn commit
+
 
 ###################################################################################################################
 
