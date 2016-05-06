@@ -154,6 +154,13 @@ x_svn_commit: .check_svn
 	@cd ${SVN_DIR}/${LANG} \
 		&& svn commit
 
+x_svn_diff_to_screen: .check_svn
+	@cd ${SVN_DIR}/${LANG}; \
+	if type cdiff &>/dev/null; then \
+		svn diff | cdiff -s; \
+	else \
+		svn diff; \
+	fi;
 
 ###################################################################################################################
 
