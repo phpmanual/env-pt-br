@@ -1,10 +1,11 @@
-LANG	  = pt_BR
-BASE_DIR  = $(shell pwd)
-SVN_DIR   = ${BASE_DIR}/doc-${LANG}
-GIT_DIR   = ${BASE_DIR}/web-php
-BUILD_DIR = ${BASE_DIR}/.build
-PEAR_DIR  = ${BASE_DIR}/.pear
-PHD_DIR   = ${BASE_DIR}/.phd
+LANG	    = pt_BR
+BASE_DIR    = $(shell pwd)
+SVN_DIR     = ${BASE_DIR}/doc-${LANG}
+GIT_DIR     = ${BASE_DIR}/web-php
+BUILD_DIR   = ${BASE_DIR}/.build
+PEAR_DIR    = ${BASE_DIR}/.pear
+PHD_DIR     = ${BASE_DIR}/.phd
+PATCHES_DIR = ${BASE_DIR}/.patches
 
 default: help
 
