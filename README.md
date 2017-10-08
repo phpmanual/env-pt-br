@@ -10,6 +10,10 @@ So **phpmanual/env-pt-br** project provides this: a `Makefile` that gives you th
 
 *Note: This one is specific for working on pt_BR Brazilian Portuguese translation. Checkout <https://github.com/phpmanual> for other available setups, or create your one based on those*
 
+## Colinha, em português!
+
+[cola.md](cola.md)
+
 ## Usage
 
 ```
