@@ -1,4 +1,11 @@
-# Inicial
+Colinha para utilizar o https://github.com/phpmanual/env-pt-br
+
+- [Configuração inicial](#configura%C3%A7%C3%A3o-inicial)
+- [Tradução](#tradu%C3%A7%C3%A3o)
+- [Mantenedor](#mantenedor)
+- [Sugestão](#sugest%C3%A3o)
+
+# Configuração inicial
 
 - Verificar dependências (`make x_check_sys_deps`)
     - Instalar dependências que estiverem faltando (`make x_pear_install; make x_phd_install`)
@@ -9,23 +16,19 @@
 
 # Tradução
 
-- Editar arquivos da pasta `doc-pt_BR\pt_BR` (usar como base os doc-pt_BR\en)
-- Compilar o manual (`make build`)
-- Testar no navegador web ( `make web`)
-
-## Sem acesso ao repositório SVN, mandar patch para um mantenedor
-
+- Editar arquivo da pasta `doc-pt_BR\pt_BR` (usar como base arquivo referenciado em doc-pt_BR\en)
+    - Compilar o manual (`make build`)
+    - Testar no navegador web ( `make web`)
 - Ver o que está diferente no SVN (`make x_svn_status`)
-- Criar arquivo patch da alteração (`make x_svn_patch_create`)
-- Enviar para um mantenedor
+    - Criar arquivo patch da alteração (`make x_svn_patch_create`)
+    - Enviar para um mantenedor
+- Deixar o repositório svn num estado limpo (`make x_svn_revert`)
 
-# Mantenedor - receber patch
+# Mantenedor
 
-- Colocar patch no svn (`make x_svn_patch_apply`)
+- Colocar patch no seu repositório local (`make x_svn_patch_apply`)
+    - Mandar arquivo para repositório oficial (`make x_svn_commit`)
 
-# Mantenedor - colocar contribuição no repositório
+# Sugestão
 
-- Adicionar arquivos no repositório e fazer commit (`make x_svn_commit`)
-
-# Começar de novo
-
+- Trabalhe em um arquivo de cada vez (tradução, compilação, patch e envio para mantenedor)
