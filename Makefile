@@ -103,7 +103,7 @@ web: .symbolic_links
 ###################################################################################################################
 
 x_check_sys_deps:
-	@system_dependencies=(svn git pear pear phd curl wget); \
+	@system_dependencies=(svn git pear phd curl wget); \
 	not_found=(); \
 	for dep in $${system_dependencies[@]}; do \
 		command -v $${dep} >/dev/null 2>&1 \
