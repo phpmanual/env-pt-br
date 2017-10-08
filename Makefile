@@ -73,7 +73,7 @@ sync: .svn_update .git_update
 
 .validate_manual: .check_php
 	cd ${SVN_DIR} \
-		&& php doc-base/configure.php --enable-xml-details --with-lang=${LANG}
+		&& nice php doc-base/configure.php --enable-xml-details --with-lang=${LANG}
 
 .generate_manual: .check_phd
 	cd ${SVN_DIR} \
@@ -81,7 +81,7 @@ sync: .svn_update .git_update
 
 .en_build: .check_php .check_phd
 	cd ${SVN_DIR} \
-		&& php doc-base/configure.php --enable-xml-details
+		&& nice php doc-base/configure.php --enable-xml-details
 	cd ${SVN_DIR} \
 		&& phd --docbook doc-base/.manual.xml --package PHP --format php --output ${BUILD_DIR}/en
 
