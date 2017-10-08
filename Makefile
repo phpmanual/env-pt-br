@@ -42,12 +42,24 @@ help:
 	@echo "  x_phd_install        installs phd via pear in your system. (pear and php are needed)"
 	@echo ""
 	@echo ""
-	@echo "  x_svn_status"         
+	@echo "  x_svn_status"
+	@echo ""
+	@echo ""
+	@echo "  x_svn_revert"
+	@echo ""
+	@echo ""
+	@echo "  x_svn_diff_to_screen"
+	@echo ""
+	@echo ""
+	@echo "  x_svn_patch_create"
+	@echo ""
+	@echo ""
+	@echo "  x_svn_patch_apply"
 	@echo ""
 	@echo ""
 	@echo "  x_svn_commit"
 	@echo ""
-	@echo ""		
+	@echo ""
 
 ###################################################################################################################
 
@@ -151,6 +163,10 @@ x_phd_install: .check_pear .check_git
 x_svn_status: .check_svn
 	@svn status ${SVN_DIR}/${LANG}
 
+x_svn_revert: .check_svn
+	@cd ${SVN_DIR}/${LANG} \
+		&& svn revert $$(svn status | cut -c9-)
+
 x_svn_commit: .check_svn
 	@cd ${SVN_DIR}/${LANG} \
 		&& svn commit
@@ -162,6 +178,17 @@ x_svn_diff_to_screen: .check_svn
 	else \
 		svn diff; \
 	fi;
+
+x_svn_patch_create: .check_svn
+	@cd ${SVN_DIR}/${LANG} \
+		&& mkdir -p ${PATCHES_DIR} \
+		&& svn diff > ${PATCHES_DIR}/$$(svn status | cut -c9- | sed -e 's/\//___/g').patch \
+		&& echo "+++Patch created ===> ${PATCHES_DIR}/$$(svn status | cut -c9- | sed -e 's/\//___/g').patch";
+
+x_svn_patch_apply: .check_svn
+	@cd ${SVN_DIR}/${LANG} \
+		&& svn patch ${PATCHES_DIR}/${FILE} \
+		&& echo "+++Patch applied ===> ${FILE}";
 
 ###################################################################################################################
 
