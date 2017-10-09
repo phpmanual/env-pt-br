@@ -60,7 +60,9 @@ help:
 	@echo "  x_svn_commit"
 	@echo ""
 	@echo ""
-
+	@echo "  x_svn_log"
+	@echo ""
+	@echo ""
 ###################################################################################################################
 
 .get_svn_repo: .check_svn
@@ -170,6 +172,10 @@ x_svn_revert: .check_svn
 x_svn_commit: .check_svn
 	@cd ${SVN_DIR}/${LANG} \
 		&& svn commit
+
+x_svn_log: .check_svn
+	@cd ${SVN_DIR}/${LANG} \
+		&& svn log --limit 5 -r HEAD:1
 
 x_svn_diff_to_screen: .check_svn
 	@cd ${SVN_DIR}/${LANG}; \
