@@ -4,6 +4,7 @@ Colinha para utilizar o https://github.com/phpmanual/env-pt-br
 - [Tradução](#tradu%C3%A7%C3%A3o)
 - [Mantenedor](#mantenedor)
 - [Sugestão](#sugest%C3%A3o)
+- [Referências](#refer%C3%AAncias)
 
 # Configuração inicial
 
@@ -31,4 +32,15 @@ Colinha para utilizar o https://github.com/phpmanual/env-pt-br
 
 # Sugestão
 
-- Trabalhe em um arquivo de cada vez (tradução, compilação, patch e envio para mantenedor)
+- Trabalhe em um arquivo de cada vez (tradução, compilação, patch e envio para mantenedor, colocar repositório num estado limpo)
+- Veja o log do repositório (`make x_svn_patch_apply`)
+- Veja a situação do projeto de tradução pt_BR na sua máquina (`x_generate_revcheck`)
+
+# Referências
+
+- [Material oficial para mantenedores e tradutores oficial do Manual do PHP](http://doc.php.net/)
+- [Manual oficial, servidor produção](https://php.net/docs.php)
+- [Manual oficial, servidor desenvolvimento](http://docs.php.net/)
+- [Outros sites do PHP.net que valem a pena se conhecer](https://php.net/sites.php)
+- [PHP Manual Brazilian Portuguese - Git/GitHub bridge](https://github.com/phpdocbrbridge/traducao)
+- [Revcheck oficial - situação do projeto de tradução pt_BR](http://doc.php.net/revcheck.php?lang=pt_BR)
