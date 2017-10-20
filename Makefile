@@ -57,12 +57,19 @@ help:
 	@echo "  x_svn_patch_apply"
 	@echo ""
 	@echo ""
+	@echo "  x_svn_delete"
+	@echo ""
+	@echo ""
+	@echo "  x_svn_add"
+	@echo ""
+	@echo ""
 	@echo "  x_svn_commit"
 	@echo ""
 	@echo ""
 	@echo "  x_svn_log"
 	@echo ""
 	@echo ""
+
 ###################################################################################################################
 
 .get_svn_repo: .check_svn
@@ -195,6 +202,14 @@ x_svn_patch_apply: .check_svn
 	@cd ${SVN_DIR}/${LANG} \
 		&& svn patch ${PATCHES_DIR}/${FILE} \
 		&& echo "+++Patch applied ===> ${FILE}";
+
+x_svn_delete: .check_svn
+	@cd ${SVN_DIR}/${LANG} \
+		&& svn status | grep '^!' | awk '{print $2}' | xargs svn delete;
+
+x_svn_add: .check_svn
+	@cd ${SVN_DIR}/${LANG} \
+		&& svn status | grep '^?' | awk '{print $2}' | xargs svn add;
 
 ###################################################################################################################
 

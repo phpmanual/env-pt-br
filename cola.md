@@ -3,6 +3,7 @@ Colinha para utilizar o https://github.com/phpmanual/env-pt-br
 - [Configuração inicial](#configura%C3%A7%C3%A3o-inicial)
 - [Tradução](#tradu%C3%A7%C3%A3o)
 - [Mantenedor](#mantenedor)
+- [Movimentação de arquivos e pastas](#movimenta%C3%A7%C3%A3o-de-arquivos-e-pastas)
 - [Sugestão](#sugest%C3%A3o)
 - [Referências](#refer%C3%AAncias)
 
@@ -28,6 +29,13 @@ Colinha para utilizar o https://github.com/phpmanual/env-pt-br
 # Mantenedor
 
 - Colocar patch no seu repositório local (`make x_svn_patch_apply`)
+    - Mandar arquivo para repositório oficial (`make x_svn_commit`)
+
+# Movimentação de arquivos e pastas
+- Faça os ajustes necessários em `doc-pt_BR\pt_BR`
+    - Compilar o manual (`make build`)
+    - Remover arquivos do SVN (`make x_svn_delete`)
+    - Adicionar arquivos ao SVN (`make x_svn_add`)
     - Mandar arquivo para repositório oficial (`make x_svn_commit`)
 
 # Sugestão
