@@ -205,11 +205,11 @@ x_svn_patch_apply: .check_svn
 
 x_svn_delete: .check_svn
 	@cd ${SVN_DIR}/${LANG} \
-		&& svn status | grep '^!' | awk '{print $2}' | xargs svn delete;
+		&& svn status | grep '^!' | awk '{print $$2}' | xargs svn delete;
 
 x_svn_add: .check_svn
 	@cd ${SVN_DIR}/${LANG} \
-		&& svn status | grep '^?' | awk '{print $2}' | xargs svn add;
+		&& svn status | grep '^?' | awk '{print $$2}' | xargs svn add;
 
 ###################################################################################################################
 
